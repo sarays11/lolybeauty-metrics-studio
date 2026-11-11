@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loly Beauty Sede 2 | Calculadora de Email Marketing & Rentabilidad</title>
+  
+  <!-- Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* VARIABLES CSS - PALETA DE COLOR MARCA LOLY BEAUTY & ESTUDIO PREMIUM */
+    :root {
+      --bg-main: #FAF7F2;            /* Fondo crema nude dominante */
+      --bg-card: #FFFFFF;            /* Tarjetas limpias independientes */
+      --bg-subtle: #F3EFEA;          /* Fondos secundarios suaves */
+      --border-color: #E8DFD8;       /* Bordes sutiles de 1px */
+      --text-main: #18181B;          /* Negro grafito principal */
+      --text-muted: #6B5E55;         /* Texto secundario de alta legibilidad */
+      --brand-primary: #C2185B;      /* Fucsia oscuro de marca */
+      --brand-primary-hover: #AD1457;/* Fucsia hover */
+      --state-success: #15803D;      /* Verde pino para metas cumplidas / rentabilidad */
+      --state-warning: #B45309;      /* Ámbar tierra para neutralidad / advertencias */
+      --state-danger: #B91C1C;       /* Rojo terracota para alertas o pérdidas */
+      --radius-card: 20px;           /* Bordes redondeados de tarjetas estilo Apple */
+      --radius-btn: 10px;            /* Bordes redondeados de botones e inputs */
+      --font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+    }
+
+    /* MODO OSCURO NATIVO Y POR ATRIBUTO */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg-main: #121214;
+        --bg-card: #1C1C1E;
+        --bg-subtle: #242426;
+        --border-color: #2E2E32;
+        --text-main: #FAFAFA;
+        --text-muted: #A1A1AA;
+        --brand-primary: #E91E63;
+        --brand-primary-hover: #C2185B;
+        --state-success: #4ADE80;
+        --state-warning: #FBBF24;
+        --state-danger: #F87171;
+      }
+    }
+
+    [data-theme="dark"] {
+      --bg-main: #121214;
+      --bg-card: #1C1C1E;
+      --bg-subtle: #242426;
+      --border-color: #2E2E32;
+      --text-main: #FAFAFA;
+      --text-muted: #A1A1AA;
+      --brand-primary: #E91E63;
+      --brand-primary-hover: #C2185B;
+      --state-success: #4ADE80;
+      --state-warning: #FBBF24;
+      --state-danger: #F87171;
+    }
+
+    /* RESET BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding: 1.5rem 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* HEADER OFICIAL */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title-group h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .brand-title-group p {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: var(--brand-primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-btn);
+      font-family: var(--font-family);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .btn:hover {
+      background-color: var(--brand-primary-hover);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-subtle);
+    }
+
+    /* BANNER METODOLÓGICO CARTILLA UAO 2026 */
+    .methodology-banner {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--brand-primary);
+      border-radius: var(--radius-btn);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .methodology-banner strong {
+      color: var(--text-main);
+      font-size: 0.875rem;
+    }
+
+    /* GRID PRINCIPAL (MOBILE FIRST) */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .dashboard-grid {
+        grid-template-columns: 360px 1fr;
+      }
+    }
+
+    .section-title {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    /* TARJETAS DE INPUTS */
+    .panel-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .input-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .input-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-field {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-btn);
+      padding: 0.65rem 0.8rem;
+      font-family: var(--font-family);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .input-field:focus {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.15);
+      background-color: var(--bg-card);
+    }
+
+    .input-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    /* GRID DE MÉTRICAS (OUTPUTS) */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* BADGES DE SEMÁFORO (SIN EMOJIS) */
+    .status-badge {
+      font-size: 0.6875rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+
+    .status-success {
+      background-color: rgba(21, 128, 61, 0.12);
+      color: var(--state-success);
+    }
+
+    .status-warning {
+      background-color: rgba(180, 83, 9, 0.12);
+      color: var(--state-warning);
+    }
+
+    .status-danger {
+      background-color: rgba(185, 28, 28, 0.12);
+      color: var(--state-danger);
+    }
+
+    .status-neutral {
+      background-color: var(--bg-subtle);
+      color: var(--text-muted);
+    }
+
+    /* VALORES DE RESULTADOS */
+    .metric-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .metric-value.color-success { color: var(--state-success); }
+    .metric-value.color-danger { color: var(--state-danger); }
+    .metric-value.color-warning { color: var(--state-warning); }
+
+    .metric-target-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding-top: 0.6rem;
+      border-top: 1px stroke var(--border-color);
+    }
+
+    .metric-target-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .metric-target-input {
+      width: 75px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-btn);
+      padding: 0.2rem 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: right;
+    }
+
+    .metric-target-input:focus {
+      border-color: var(--brand-primary);
+      outline: none;
+    }
+
+    .metric-formula {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      background-color: var(--bg-subtle);
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    .alert-banner {
+      color: var(--state-danger);
+      font-size: 0.8125rem;
+      font-weight: 700;
+    }
+
+    /* SECCIÓN DE DIAGNÓSTICO DINÁMICO */
+    .diagnosis-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--brand-primary);
+      border-radius: var(--radius-card);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .diagnosis-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .diagnosis-text {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .block-header {
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER MARCA LOLY BEAUTY -->
+    <header>
+      <div class="brand-group">
+        <img src="https://lolybeautyshop.com/cdn/shop/files/Logo_png.png?v=1748624800&width=500" 
+             alt="Loly Beauty Logo Oficial" 
+             class="brand-logo">
+        <div class="brand-title-group">
+          <p>Sede 2 Cali • Marketing Relacional</p>
+          <h1>Calculadora de Email Marketing & Rentabilidad</h1>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button class="btn btn-secondary" id="btn-theme-toggle" type="button">
+          <span id="theme-icon-text">Modo Claro / Oscuro</span>
+        </button>
+        <button class="btn" id="btn-load-sede2" type="button">
+          Cargar Campaña Sede 2
+        </button>
+      </div>
+    </header>
+
+    <!-- BANNER METODOLÓGICO CARTILLA UAO 2026 -->
+    <div class="methodology-banner" id="demo-banner">
+      <strong>Nota Metodológica:</strong>
+      <span>La métrica de 'Apertura' no se mide como indicador clave debido al consumo automático de imágenes (Apple Mail Privacy Protection). La Tasa de Clics y la Tasa de Respuesta determinan la interacción real del cliente.</span>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- COLUMNA IZQUIERDA: INPUTS -->
+      <aside>
+        <h2 class="section-title">1. Datos de Volumen de Email</h2>
+        <div class="panel-card">
+          <div class="input-group">
+            <label class="input-label" for="inp-entregados">
+              <span>Correos Entregados (Denominador)</span>
+            </label>
+            <input type="number" id="inp-entregados" class="input-field" min="0" placeholder="Ej: 800" value="800">
+          </div>
+
+          <div class="input-grid-2">
+            <div class="input-group">
+              <label class="input-label" for="inp-clics">Clics Únicos</label>
+              <input type="number" id="inp-clics" class="input-field" min="0" placeholder="Ej: 32" value="32">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="inp-respuestas">Respuestas</label>
+              <input type="number" id="inp-respuestas" class="input-field" min="0" placeholder="Ej: 16" value="16">
+            </div>
+          </div>
+
+          <div class="input-grid-2">
+            <div class="input-group">
+              <label class="input-label" for="inp-conversiones">Pedidos Pagados</label>
+              <input type="number" id="inp-conversiones" class="input-field" min="0" placeholder="Ej: 10" value="10">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="inp-bajas">Bajas (Unsub)</label>
+              <input type="number" id="inp-bajas" class="input-field" min="0" placeholder="Ej: 4" value="4">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="inp-spam">Reportes de Spam / Queja</label>
+            <input type="number" id="inp-spam" class="input-field" min="0" placeholder="Ej: 0" value="0">
+          </div>
+        </div>
+
+        <h2 class="section-title">2. Inversión & Finanzas (COP)</h2>
+        <div class="panel-card">
+          <div class="input-group">
+            <label class="input-label" for="inp-inversion">Inversión Total Campaña (COP)</label>
+            <input type="number" id="inp-inversion" class="input-field" min="0" step="50000" placeholder="Ej: 500000" value="500000">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="inp-ingreso-conv">Ticket Promedio por Pedido (COP)</label>
+            <input type="number" id="inp-ingreso-conv" class="input-field" min="0" step="5000" placeholder="Ej: 120000" value="120000">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="inp-ltv">LTV Estimado Cliente (COP)</label>
+            <input type="number" id="inp-ltv" class="input-field" min="0" step="10000" placeholder="Ej: 350000" value="350000">
+          </div>
+        </div>
+      </aside>
+
+      <!-- COLUMNA DERECHA: METRICAS CALCULADAS & DIAGNÓSTICO -->
+      <main>
+        <div class="block-header" style="margin-top: 0;">
+          <h2 class="section-title">Métricas Principales de Conversión Email</h2>
+        </div>
+
+        <div class="metrics-grid">
+          <!-- TASA DE CLICS -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Tasa de Clics (CTR)</span>
+                <span class="status-badge status-neutral" id="badge-ctr">Calculando</span>
+              </div>
+              <div class="metric-value" id="val-ctr">0.00%</div>
+            </div>
+            <div>
+              <div class="metric-target-box">
+                <span class="metric-target-label">Meta esperada (%):</span>
+                <input type="number" class="metric-target-input" id="target-ctr" value="4.0" step="0.1">
+              </div>
+              <div class="metric-formula">Fórmula: (Clics / Entregados) * 100</div>
+            </div>
+          </div>
+
+          <!-- TASA DE RESPUESTA -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Tasa de Respuesta</span>
+                <span class="status-badge status-neutral" id="badge-resp">Calculando</span>
+              </div>
+              <div class="metric-value" id="val-resp">0.00%</div>
+            </div>
+            <div>
+              <div class="metric-target-box">
+                <span class="metric-target-label">Meta esperada (%):</span>
+                <input type="number" class="metric-target-input" id="target-resp" value="2.0" step="0.1">
+              </div>
+              <div class="metric-formula">Fórmula: (Respuestas / Entregados) * 100</div>
+            </div>
+          </div>
+
+          <!-- TASA DE CONVERSIÓN -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Tasa de Conversión (Venta)</span>
+                <span class="status-badge status-neutral" id="badge-conv">Calculando</span>
+              </div>
+              <div class="metric-value" id="val-conv">0.00%</div>
+            </div>
+            <div>
+              <div class="metric-target-box">
+                <span class="metric-target-label">Meta Sede 2 (%):</span>
+                <input type="number" class="metric-target-input" id="target-conv" value="6.67" step="0.1">
+              </div>
+              <div class="metric-formula">Fórmula: (Pedidos / Entregados) * 100</div>
+            </div>
+          </div>
+
+          <!-- TASA DE BAJAS -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Tasa de Bajas (Unsub)</span>
+                <span class="status-badge status-neutral" id="badge-baja">Calculando</span>
+              </div>
+              <div class="metric-value" id="val-baja">0.00%</div>
+            </div>
+            <div>
+              <div class="metric-target-box">
+                <span class="metric-target-label">Límite Máx (%):</span>
+                <input type="number" class="metric-target-input" id="target-baja" value="1.0" step="0.1">
+              </div>
+              <div class="metric-formula">Fórmula: (Bajas / Entregados) * 100</div>
+            </div>
+          </div>
+
+          <!-- TASA DE SPAM -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Tasa de Spam / Queja</span>
+                <span class="status-badge status-neutral" id="badge-spam">Calculando</span>
+              </div>
+              <div class="metric-value" id="val-spam">0.00%</div>
+            </div>
+            <div>
+              <div class="metric-target-box">
+                <span class="metric-target-label">Límite Máx (%):</span>
+                <input type="number" class="metric-target-input" id="target-spam" value="0.1" step="0.01">
+              </div>
+              <div class="metric-formula">Fórmula: (Spam / Entregados) * 100</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block-header">
+          <h2 class="section-title">Rentabilidad & Adquisición Financiera (COP)</h2>
+        </div>
+
+        <div class="metrics-grid">
+          <!-- CAC -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">CAC (Costo Adquisición)</span>
+                <span class="status-badge status-neutral">Adquisición</span>
+              </div>
+              <div class="metric-value" id="val-cac">$0</div>
+            </div>
+            <div class="metric-formula">Fórmula: Inversión / Pedidos Pagados</div>
+          </div>
+
+          <!-- CPL -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">CPL (Costo por Respuesta)</span>
+                <span class="status-badge status-neutral">Contacto</span>
+              </div>
+              <div class="metric-value" id="val-cpl">$0</div>
+            </div>
+            <div class="metric-formula">Fórmula: Inversión / Respuestas</div>
+          </div>
+
+          <!-- ROI -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">ROI (Retorno Inversión)</span>
+                <span class="status-badge status-neutral" id="badge-roi">Retorno</span>
+              </div>
+              <div class="metric-value" id="val-roi">0.00%</div>
+            </div>
+            <div class="metric-formula">Fórmula: ((Ingresos - Inversión) / Inversión) * 100</div>
+          </div>
+
+          <!-- ROAS -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">ROAS (Retorno en Ads)</span>
+                <span class="status-badge status-neutral" id="badge-roas">Eficiencia</span>
+              </div>
+              <div class="metric-value" id="val-roas">0.00x</div>
+            </div>
+            <div class="metric-formula">Fórmula: Ingresos Totales / Inversión</div>
+          </div>
+
+          <!-- RATIO LTV:CAC -->
+          <div class="metric-card">
+            <div>
+              <div class="metric-header">
+                <span class="metric-title">Ratio LTV : CAC</span>
+                <span class="status-badge status-neutral" id="badge-ltv-cac">Salud Financiera</span>
+              </div>
+              <div class="metric-value" id="val-ltv-cac">0.00 : 1</div>
+            </div>
+            <div class="metric-formula">Fórmula: Valor de Vida Cliente / CAC</div>
+          </div>
+        </div>
+
+        <!-- DIAGNÓSTICO ESTRATÉGICO EN TIEMPO REAL -->
+        <div class="diagnosis-card">
+          <h3>Diagnóstico Estratégico Sede 2</h3>
+          <p class="diagnosis-text" id="diagnosis-content">
+            Cargando recomendaciones automáticas para la campaña...
+          </p>
+        </div>
+
+      </main>
+    </div>
+
+    <footer>
+      Loly Beauty Shop • Sede 2 Cali | Tablero de Control de Marketing Relacional UAO 2026
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // INPUTS
+      const inpEntregados = document.getElementById('inp-entregados');
+      const inpClics = document.getElementById('inp-clics');
+      const inpRespuestas = document.getElementById('inp-respuestas');
+      const inpConversiones = document.getElementById('inp-conversiones');
+      const inpBajas = document.getElementById('inp-bajas');
+      const inpSpam = document.getElementById('inp-spam');
+      const inpInversion = document.getElementById('inp-inversion');
+      const inpIngresoConv = document.getElementById('inp-ingreso-conv');
+      const inpLtv = document.getElementById('inp-ltv');
+
+      // METAS EDITABLES
+      const targetCtr = document.getElementById('target-ctr');
+      const targetResp = document.getElementById('target-resp');
+      const targetConv = document.getElementById('target-conv');
+      const targetBaja = document.getElementById('target-baja');
+      const targetSpam = document.getElementById('target-spam');
+
+      // OUTPUT VALORES
+      const valCtr = document.getElementById('val-ctr');
+      const valResp = document.getElementById('val-resp');
+      const valConv = document.getElementById('val-conv');
+      const valBaja = document.getElementById('val-baja');
+      const valSpam = document.getElementById('val-spam');
+
+      const valCac = document.getElementById('val-cac');
+      const valCpl = document.getElementById('val-cpl');
+      const valRoi = document.getElementById('val-roi');
+      const valRoas = document.getElementById('val-roas');
+      const valLtvCac = document.getElementById('val-ltv-cac');
+
+      // BADGES
+      const badgeCtr = document.getElementById('badge-ctr');
+      const badgeResp = document.getElementById('badge-resp');
+      const badgeConv = document.getElementById('badge-conv');
+      const badgeBaja = document.getElementById('badge-baja');
+      const badgeSpam = document.getElementById('badge-spam');
+      const badgeRoi = document.getElementById('badge-roi');
+      const badgeRoas = document.getElementById('badge-roas');
+      const badgeLtvCac = document.getElementById('badge-ltv-cac');
+
+      const diagnosisContent = document.getElementById('diagnosis-content');
+
+      // FORMATEADOR MONEDA COP
+      const formatCOP = (val) => {
+        return new Intl.NumberFormat('es-CO', {
+          style: 'currency',
+          currency: 'COP',
+          maximumFractionDigits: 0
+        }).format(val);
+      };
+
+      // ACTUALIZADOR BADGES
+      const setBadge = (el, statusClass, text) => {
+        el.className = 'status-badge ' + statusClass;
+        el.textContent = text;
+      };
+
+      // LÓGICA PRINCIPAL DE CÁLCULO
+      const calculateMetrics = () => {
+        const entregados = parseFloat(inpEntregados.value) || 0;
+        const clics = parseFloat(inpClics.value) || 0;
+        const respuestas = parseFloat(inpRespuestas.value) || 0;
+        const conversiones = parseFloat(inpConversiones.value) || 0;
+        const bajas = parseFloat(inpBajas.value) || 0;
+        const spam = parseFloat(inpSpam.value) || 0;
+        const inversion = parseFloat(inpInversion.value) || 0;
+        const ingresoConv = parseFloat(inpIngresoConv.value) || 0;
+        const ltv = parseFloat(inpLtv.value) || 0;
+
+        const tCtr = parseFloat(targetCtr.value) || 0;
+        const tResp = parseFloat(targetResp.value) || 0;
+        const tConv = parseFloat(targetConv.value) || 0;
+        const tBaja = parseFloat(targetBaja.value) || 0;
+        const tSpam = parseFloat(targetSpam.value) || 0;
+
+        // VALIDACIÓN: DIVISIÓN POR CERO
+        if (entregados <= 0) {
+          const warnText = "Falta denominador";
+          valCtr.textContent = warnText;
+          valResp.textContent = warnText;
+          valConv.textContent = warnText;
+          valBaja.textContent = warnText;
+          valSpam.textContent = warnText;
+
+          valCtr.className = "metric-value alert-banner";
+          valResp.className = "metric-value alert-banner";
+          valConv.className = "metric-value alert-banner";
+          valBaja.className = "metric-value alert-banner";
+          valSpam.className = "metric-value alert-banner";
+
+          setBadge(badgeCtr, 'status-danger', 'Falta dato');
+          setBadge(badgeResp, 'status-danger', 'Falta dato');
+          setBadge(badgeConv, 'status-danger', 'Falta dato');
+          setBadge(badgeBaja, 'status-danger', 'Falta dato');
+          setBadge(badgeSpam, 'status-danger', 'Falta dato');
+
+          diagnosisContent.textContent = "Ingresa el volumen de correos entregados mayor a cero para iniciar la evaluación diagnóstica de la Sede 2.";
+          return;
+        }
+
+        // CÁLCULO DE TASAS DIVIDIDAS POR ENTREGADOS
+        const ctr = (clics / entregados) * 100;
+        const respRate = (respuestas / entregados) * 100;
+        const convRate = (conversiones / entregados) * 100;
+        const bajaRate = (bajas / entregados) * 100;
+        const spamRate = (spam / entregados) * 100;
+
+        valCtr.textContent = ctr.toFixed(2) + '%';
+        valResp.textContent = respRate.toFixed(2) + '%';
+        valConv.textContent = convRate.toFixed(2) + '%';
+        valBaja.textContent = bajaRate.toFixed(2) + '%';
+        valSpam.textContent = spamRate.toFixed(2) + '%';
+
+        valCtr.className = "metric-value";
+        valResp.className = "metric-value";
+        valConv.className = "metric-value";
+        valBaja.className = "metric-value";
+        valSpam.className = "metric-value";
+
+        // EVALUACIÓN DE SEMÁFOROS
+        const evalPositive = (val, target, badgeEl) => {
+          if (val >= target) {
+            setBadge(badgeEl, 'status-success', 'Cumple meta');
+          } else if (val >= target * 0.7) {
+            setBadge(badgeEl, 'status-warning', 'Cerca');
+          } else {
+            setBadge(badgeEl, 'status-danger', 'Bajo meta');
+          }
+        };
+
+        const evalNegative = (val, targetMax, badgeEl) => {
+          if (val <= targetMax) {
+            setBadge(badgeEl, 'status-success', 'Bajo control');
+          } else if (val <= targetMax * 1.5) {
+            setBadge(badgeEl, 'status-warning', 'Atención');
+          } else {
+            setBadge(badgeEl, 'status-danger', 'Alerta crítica');
+          }
+        };
+
+        evalPositive(ctr, tCtr, badgeCtr);
+        evalPositive(respRate, tResp, badgeResp);
+        evalPositive(convRate, tConv, badgeConv);
+        evalNegative(bajaRate, tBaja, badgeBaja);
+        evalNegative(spamRate, tSpam, badgeSpam);
+
+        // CÁLCULOS FINANCIEROS Y ADQUISICIÓN
+        const ingresosTotales = conversiones * ingresoConv;
+
+        // CAC
+        let cac = 0;
+        if (conversiones > 0) {
+          cac = inversion / conversiones;
+          valCac.textContent = formatCOP(cac);
+          valCac.className = "metric-value";
+        } else {
+          valCac.textContent = inversion > 0 ? "Sin pedidos" : "$0";
+          valCac.className = "metric-value alert-banner";
+        }
+
+        // CPL (Costo por respuesta)
+        if (respuestas > 0) {
+          const cpl = inversion / respuestas;
+          valCpl.textContent = formatCOP(cpl);
+          valCpl.className = "metric-value";
+        } else {
+          valCpl.textContent = inversion > 0 ? "Sin respuestas" : "$0";
+          valCpl.className = "metric-value alert-banner";
+        }
+
+        // ROI
+        let roi = 0;
+        if (inversion > 0) {
+          roi = ((ingresosTotales - inversion) / inversion) * 100;
+          valRoi.textContent = roi.toFixed(2) + '%';
+          if (roi > 0) {
+            valRoi.className = "metric-value color-success";
+            setBadge(badgeRoi, 'status-success', 'Rentable');
+          } else if (roi === 0) {
+            valRoi.className = "metric-value color-warning";
+            setBadge(badgeRoi, 'status-warning', 'Equilibrio');
+          } else {
+            valRoi.className = "metric-value color-danger";
+            setBadge(badgeRoi, 'status-danger', 'Pérdida');
+          }
+        } else {
+          valRoi.textContent = "0.00%";
+          valRoi.className = "metric-value";
+          setBadge(badgeRoi, 'status-neutral', 'Sin inversión');
+        }
+
+        // ROAS
+        if (inversion > 0) {
+          const roas = ingresosTotales / inversion;
+          valRoas.textContent = roas.toFixed(2) + 'x';
+          if (roas >= 2.0) {
+            valRoas.className = "metric-value color-success";
+            setBadge(badgeRoas, 'status-success', 'Excelente');
+          } else if (roas >= 1.0) {
+            valRoas.className = "metric-value color-warning";
+            setBadge(badgeRoas, 'status-warning', 'Aceptable');
+          } else {
+            valRoas.className = "metric-value color-danger";
+            setBadge(badgeRoas, 'status-danger', 'Ineficiente');
+          }
+        } else {
+          valRoas.textContent = "0.00x";
+          valRoas.className = "metric-value";
+          setBadge(badgeRoas, 'status-neutral', 'Sin inversión');
+        }
+
+        // RATIO LTV : CAC
+        if (cac > 0) {
+          const ratio = ltv / cac;
+          valLtvCac.textContent = ratio.toFixed(2) + ' : 1';
+          if (ratio >= 3.0) {
+            valLtvCac.className = "metric-value color-success";
+            setBadge(badgeLtvCac, 'status-success', 'Saludable');
+          } else if (ratio >= 1.0) {
+            valLtvCac.className = "metric-value color-warning";
+            setBadge(badgeLtvCac, 'status-warning', 'Riesgo');
+          } else {
+            valLtvCac.className = "metric-value color-danger";
+            setBadge(badgeLtvCac, 'status-danger', 'Insostenible');
+          }
+        } else {
+          valLtvCac.textContent = "N/A";
+          valLtvCac.className = "metric-value";
+          setBadge(badgeLtvCac, 'status-neutral', 'Requiere CAC');
+        }
+
+        // MOTOR DE DIAGNÓSTICO EN TIEMPO REAL
+        let diagMsgs = [];
+        if (convRate >= tConv) {
+          diagMsgs.push("La tasa de conversión alcanzó la meta fijada para la Sede 2. El mensaje del correo genera suficiente tracción para la recogida exprés.");
+        } else {
+          diagMsgs.push("La tasa de conversión está por debajo de la meta. Se recomienda reforzar el llamado a la acción al final del correo con enlace directo a WhatsApp.");
+        }
+
+        if (respRate < tResp) {
+          diagMsgs.push("La tasa de respuesta requiere atención: prueba cerrar el correo con una pregunta directa sobre la confirmación del pedido.");
+        }
+
+        if (bajaRate > tBaja) {
+          diagMsgs.push("Alerta de desuscripción: la tasa de bajas supera el límite recomendado. Revisa si la frecuencia del correo coincide con la expectativa planteada en la landing page.");
+        }
+
+        if (roi > 0) {
+          diagMsgs.push("La campaña genera retorno positivo de " + roi.toFixed(1) + "% sobre la inversión en COP.");
+        } else if (inversion > 0) {
+          diagMsgs.push("Atención financiera: los ingresos actuales por conversiones no cubren el costo de la campaña.");
+        }
+
+        diagnosisContent.textContent = diagMsgs.join(" ");
+      };
+
+      // EVENT LISTENERS
+      const inputsList = [
+        inpEntregados, inpClics, inpRespuestas, inpConversiones, inpBajas, inpSpam,
+        inpInversion, inpIngresoConv, inpLtv,
+        targetCtr, targetResp, targetConv, targetBaja, targetSpam
+      ];
+
+      inputsList.forEach(input => {
+        input.addEventListener('input', calculateMetrics);
+      });
+
+      // CAMBIO DE TEMA
+      const btnTheme = document.getElementById('btn-theme-toggle');
+      btnTheme.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      });
+
+      // CARGAR PRESET SEDE 2
+      const btnLoadSede2 = document.getElementById('btn-load-sede2');
+      btnLoadSede2.addEventListener('click', () => {
+        inpEntregados.value = 800;
+        inpClics.value = 32;
+        inpRespuestas.value = 16;
+        inpConversiones.value = 10;
+        inpBajas.value = 4;
+        inpSpam.value = 0;
+        inpInversion.value = 500000;
+        inpIngresoConv.value = 120000;
+        inpLtv.value = 350000;
+        targetConv.value = 6.67;
+        calculateMetrics();
+      });
+
+      // CÁLCULO INICIAL
+      calculateMetrics();
+    });
+  </script>
+</body>
+</html>
